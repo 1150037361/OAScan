@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="286.0" prefWidth="241.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.against.oascan.ProxyController">
+   <children>
+      <RadioButton fx:id="enableRadioButton" layoutX="76.0" layoutY="16.0" mnemonicParsing="false" text="启用">
+         <toggleGroup>
+            <ToggleGroup fx:id="radioGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="disableRadioButton" layoutX="130.0" layoutY="16.0" mnemonicParsing="false" selected="true" text="禁止" toggleGroup="$radioGroup" />
+      <ChoiceBox fx:id="proxyTypeChoiceBox" blendMode="SRC_ATOP" cacheHint="SPEED" layoutX="76.0" layoutY="54.0" prefHeight="23.0" prefWidth="73.0" />
+      <Label layoutX="23.0" layoutY="58.0" text="类型：" />
+      <Label layoutX="23.0" layoutY="99.0" text="IP地址：" />
+      <Label layoutX="23.0" layoutY="136.0" text="端口：" />
+      <Label layoutX="23.0" layoutY="170.0" text="用户名：" />
+      <Label layoutX="23.0" layoutY="204.0" text="密码：" />
+      <TextField fx:id="proxyHostField" layoutX="76.0" layoutY="95.0" prefHeight="23.0" prefWidth="139.0" text="127.0.0.1" />
+      <TextField fx:id="proxyPortField" layoutX="76.0" layoutY="132.0" prefHeight="23.0" prefWidth="139.0" text="8080" />
+      <TextField fx:id="usernameField" layoutX="76.0" layoutY="166.0" prefHeight="23.0" prefWidth="139.0" />
+      <TextField fx:id="passwordField" layoutX="76.0" layoutY="200.0" prefHeight="23.0" prefWidth="139.0" />
+      <Button fx:id="cancelButton" cancelButton="true" layoutX="76.0" layoutY="247.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="23.0" prefWidth="45.0" text="取消" />
+      <Button fx:id="saveButton" defaultButton="true" layoutX="157.0" layoutY="247.0" mnemonicParsing="false" onAction="#saveButtonAction" prefHeight="23.0" prefWidth="45.0" text="保存" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootPane" alignment="TOP_RIGHT" prefHeight="646.0" prefWidth="999.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.against.oascan.MainController">
+   <children>
+      <MenuBar fx:id="rootMenuBar" nodeOrientation="LEFT_TO_RIGHT">
+        <menus>
+          <Menu fx:id="proxMenu" mnemonicParsing="false" text="代理">
+            <items>
+              <MenuItem fx:id="setProxyMenuItem" mnemonicParsing="false" onAction="#setProxyMenuItemAction" text="代理设置" />
+            </items>
+          </Menu>
+          <Menu fx:id="helpMenu" mnemonicParsing="false" text="帮助">
+            <items>
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#helpMenuItemAction" text="关于" />
+            </items>
+          </Menu>
+        </menus>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </MenuBar>
+      <TabPane prefHeight="622.0" prefWidth="999.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="致远OA">
+               <content>
+                  <TabPane prefHeight="413.0" prefWidth="673.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="测试信息">
+                           <content>
+                              <VBox alignment="BOTTOM_LEFT" prefHeight="380.0" prefWidth="673.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label prefHeight="15.0" prefWidth="65.0" text="漏洞类型：">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ChoiceBox fx:id="seeyonPocTypeChoiceBox" prefWidth="150.0" />
+                                          <Label text="目标地址：">
+                                             <HBox.margin>
+                                                <Insets left="50.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="seeyonUrlTextField" prefHeight="23.0" prefWidth="390.0" promptText="http://127.0.0.1/" />
+                                          <Button fx:id="seeyonScanButton" mnemonicParsing="false" onAction="#scanSeeyonVul" prefHeight="23.0" prefWidth="58.0" text="验证">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#seeyonClearVulInfo" text="清理信息">
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="536.0" prefWidth="999.0">
+                                       <children>
+                                          <TextArea fx:id="seeyonScanInfoTextArea" editable="false" prefHeight="531.0" prefWidth="999.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin></TextArea>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                      </Tab>
+                      <Tab text="命令执行">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="999.0">
+                                       <children>
+                                          <Label text="输入命令：">
+                                             <HBox.margin>
+                                                <Insets left="35.0" right="20.0" />
+                                             </HBox.margin></Label>
+                                          <TextField prefHeight="23.0" prefWidth="300.0" />
+                                          <Button mnemonicParsing="false" text="执行命令">
+                                             <HBox.margin>
+                                                <Insets left="35.0" />
+                                             </HBox.margin></Button>
+                                          <Button mnemonicParsing="false" text="清理信息">
+                                             <HBox.margin>
+                                                <Insets left="35.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="510.0" prefWidth="999.0">
+                                       <children>
+                                          <TextArea editable="false" prefHeight="502.0" prefWidth="1092.0" text="功能还在开发中 ......"><font>
+                                              <Font size="16.0" />
+                                          </font>
+                                              <HBox.margin>
+                                                  <Insets left="10.0" right="10.0" />
+                                              </HBox.margin></TextArea>
+
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </content>
+          </Tab>
+          <Tab text="通达OA">
+               <content>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="测试信息">
+                           <content>
+                              <VBox alignment="BOTTOM_LEFT" prefHeight="380.0" prefWidth="673.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label prefHeight="15.0" prefWidth="65.0" text="漏洞类型：">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ChoiceBox fx:id="tdPocTypeChoiceBox" prefWidth="150.0" />
+                                          <Label text="目标地址：">
+                                             <HBox.margin>
+                                                <Insets left="50.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="tdUrlTextField" prefHeight="23.0" prefWidth="390.0" promptText="http://127.0.0.1/" />
+                                          <Button fx:id="tdScanButton" mnemonicParsing="false" onAction="#scanTdVul" prefHeight="23.0" prefWidth="58.0" text="验证">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#tdClearVulInfo" text="清理信息">
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="536.0" prefWidth="999.0">
+                                       <children>
+                                          <TextArea fx:id="tdScanInfoTextArea" editable="false" prefHeight="531.0" prefWidth="999.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin></TextArea>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        <Tab text="命令执行">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="999.0">
+                                       <children>
+                                          <Label text="输入命令信息：">
+                                             <HBox.margin>
+                                                <Insets left="35.0" />
+                                             </HBox.margin></Label>
+                                          <TextField prefHeight="23.0" prefWidth="300.0" />
+                                          <Button mnemonicParsing="false" text="执行命令">
+                                             <HBox.margin>
+                                                <Insets left="35.0" />
+                                             </HBox.margin></Button>
+                                          <Button mnemonicParsing="false" text="清理信息">
+                                             <HBox.margin>
+                                                <Insets left="35.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="510.0" prefWidth="999.0">
+                                       <children>
+                                          <TextArea editable="false" prefHeight="502.0" prefWidth="1092.0" text="功能还在开发中 ......">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextArea>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <HBox alignment="CENTER_RIGHT" fillHeight="false" maxHeight="15.0" maxWidth="999.0" minHeight="15.0" minWidth="999.0" prefHeight="15.0" prefWidth="999.0">
+         <children>
+            <Label fx:id="proxStatusLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" nodeOrientation="RIGHT_TO_LEFT" text="代理未设置">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets bottom="5.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Label text="By against">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
